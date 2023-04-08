@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 4 - part 2</title>
+
+<style>
+
+p {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.hidden {
+  display: none;
+}
+
+</style>
+
+
+	<script>
+		function hideName() {
+			document.getElementById("capital").classList.add("hidden");
+		}
+
+		function showName() {
+			document.getElementById("capital").classList.remove("hidden");
+		}
+
+		function toggleName() {
+			var capital = document.getElementById("capital");
+			capital.classList.toggle("hidden");
+		}
+	</script>
+</head>
+<body>
+	<h2> Country: </h2>
+    
+    <p>Canada</p>
+
+    <h2> Capital: </h2>
+
+	<p id="capital">Ottawa</p>
+
+    <br><br>
+
+
+	<button onclick="hideName()">Hide capital name</button>
+	<button onclick="showName()">Show capital name</button>
+	<button onclick="toggleName()">Toggle</button>
+
+    <br>  <br>
+
+    <p class="yellow" onmouseover="this.classList.add('yellow')" onmouseout="this.classList.remove('yellow')">Hover on this paragraph for yellow colour.</p>
+
+	<p class="green" onclick="this.classList.toggle('green')">Click this line for Green colour</p>
+
+    
+</body>
+</html>

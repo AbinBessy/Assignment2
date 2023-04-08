@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculate Total with Tax</title>
+    <style>   
+        label {
+          display: inline-block;
+          width: 150px;
+          font-weight: bolder;
+          text-align: center;
+        }
+        input[type="text"] {
+          display: inline-block;
+          margin-right: 20px;
+          width: 80px;
+        }
+      </style>
+
+
+    <script>
+      function calcTotalTax() {
+        var roomRental = Number(document.getElementById("roomRent").value);
+        var foodCost = Number(document.getElementById("foodCost").value);
+        var entertainment = Number(document.getElementById("entertainment").value);
+        var total = roomRental + foodCost + entertainment;
+        var totalWithTax = total * 1.13;
+        document.getElementById("total").value = total.toFixed(2);
+        document.getElementById("totalWithTax").value = totalWithTax.toFixed(2);
+      }
+    </script>
+
+
+  </head>
+  <body>
+    <h1>Calculate Total with Tax</h1>
+
+    <form oninput="calcTotalTax()">
+        <div class="getInput">
+            <label>Room Rental:</label>  <input type="text" id="roomRent">
+            <br><br>
+            <label>Food :</label>  <input type="text" id="foodCost">
+            <br><br>
+            <label>Entertainment:</label> <input type="text" id="entertainment">
+            <br><br>
+            <label>Total:</label>  <input type="text" id="total" disabled>
+            <br><br>
+            <label>With Tax:</label>  <input type="text" id="totalWithTax" disabled>
+            <br><br>
+            <input type="submit" value="Calculate">
+        </div>
+    </form>
+    
+  </body>
+</html>
